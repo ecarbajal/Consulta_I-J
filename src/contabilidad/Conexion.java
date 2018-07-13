@@ -23,6 +23,7 @@ public class Conexion {
     private Statement sentenciaSQL = null;
 
     public void Conectar() {
+        
         try {
             String controlador = "com.mysql.jdbc.Driver";
             final String server = "192.168.1.100";

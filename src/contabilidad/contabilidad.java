@@ -38,9 +38,7 @@ public class contabilidad extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-
-        reporte.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        reporte.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         reporte.setText("LIMPIAR TABLA");
         reporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,11 +53,11 @@ public class contabilidad extends javax.swing.JFrame {
 
             },
             new String [] {
-                "FACTURA", "N° CLIENTE ", "NOMBRE", "FECHA", "SUBTOTAL", "IVA", "TOTAL", "IUUID", "ORIGEN", "EFECTIVO", "CREDITO", "DEBITO", "TRANSFER", "CHEQUE"
+                "FECHA", "ENTRADA INV.", "FACTURA", "FOLIO"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, true, true, true, true, true
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -67,34 +65,8 @@ public class contabilidad extends javax.swing.JFrame {
             }
         });
         jScrollPane2.setViewportView(tblFacturas);
-        if (tblFacturas.getColumnModel().getColumnCount() > 0) {
-            tblFacturas.getColumnModel().getColumn(0).setMinWidth(80);
-            tblFacturas.getColumnModel().getColumn(0).setPreferredWidth(80);
-            tblFacturas.getColumnModel().getColumn(0).setMaxWidth(80);
-            tblFacturas.getColumnModel().getColumn(1).setMinWidth(80);
-            tblFacturas.getColumnModel().getColumn(1).setPreferredWidth(80);
-            tblFacturas.getColumnModel().getColumn(1).setMaxWidth(80);
-            tblFacturas.getColumnModel().getColumn(2).setMinWidth(200);
-            tblFacturas.getColumnModel().getColumn(2).setPreferredWidth(280);
-            tblFacturas.getColumnModel().getColumn(2).setMaxWidth(500);
-            tblFacturas.getColumnModel().getColumn(3).setMinWidth(80);
-            tblFacturas.getColumnModel().getColumn(3).setPreferredWidth(80);
-            tblFacturas.getColumnModel().getColumn(3).setMaxWidth(80);
-            tblFacturas.getColumnModel().getColumn(4).setMinWidth(80);
-            tblFacturas.getColumnModel().getColumn(4).setPreferredWidth(80);
-            tblFacturas.getColumnModel().getColumn(4).setMaxWidth(80);
-            tblFacturas.getColumnModel().getColumn(5).setMinWidth(80);
-            tblFacturas.getColumnModel().getColumn(5).setPreferredWidth(80);
-            tblFacturas.getColumnModel().getColumn(5).setMaxWidth(80);
-            tblFacturas.getColumnModel().getColumn(6).setMinWidth(80);
-            tblFacturas.getColumnModel().getColumn(6).setPreferredWidth(80);
-            tblFacturas.getColumnModel().getColumn(6).setMaxWidth(80);
-            tblFacturas.getColumnModel().getColumn(7).setMinWidth(270);
-            tblFacturas.getColumnModel().getColumn(7).setPreferredWidth(270);
-            tblFacturas.getColumnModel().getColumn(7).setMaxWidth(270);
-        }
 
-        btnBusqueda.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnBusqueda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnBusqueda.setText("Consultar");
         btnBusqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,19 +75,23 @@ public class contabilidad extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("(01) Almacen Nave A");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("A");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("FECHAS");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Consulta entrada de inventario - Factura");
 
         fechaini.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("yyyy/MM/dd"))));
-        fechaini.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        fechaini.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         fechaini.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fechainiActionPerformed(evt);
@@ -123,9 +99,9 @@ public class contabilidad extends javax.swing.JFrame {
         });
 
         fechafin.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("yyyy/MM/dd"))));
-        fechafin.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        fechafin.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
 
-        reporte1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        reporte1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         reporte1.setLabel("REPORTE EXCEL");
         reporte1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,52 +114,48 @@ public class contabilidad extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel4)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2)))
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(fechaini, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(fechafin, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnBusqueda)
-                .addContainerGap(486, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(reporte)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(reporte1)
-                .addGap(30, 30, 30))
+                        .addComponent(reporte)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(reporte1))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addComponent(jLabel4))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jLabel1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(fechaini, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(jLabel2)
+                            .addGap(18, 18, 18)
+                            .addComponent(fechafin, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnBusqueda))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 719, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1)
-                        .addComponent(btnBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3)
-                        .addComponent(fechaini, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(fechafin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(btnBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(fechaini, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fechafin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(reporte)
@@ -197,7 +169,7 @@ public class contabilidad extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,17 +194,19 @@ public class contabilidad extends javax.swing.JFrame {
 
                 DefaultTableModel modelo = (DefaultTableModel) tblFacturas.getModel();
 
-                consulta = "SELECT f.`DNUM`, fc.`CLICOD`, fc.`CLINOM` , f.`DFECHA`, f.`DBRUTO` , f.`DIVA`, f.`DCANTF`, f.`DUTILID`, f.`DCFDIUUID`, f.`DREFER`, DPAGO1, DPAGO2, DPAGO3, DPAGO4, DPAGO5  "
-                        + "FROM ferhog.fdoc f INNER JOIN ferhog.fcli fc on f.cliseq = fc.cliseq "
-                        + "WHERE DFECHA BETWEEN '" + inicio + "' AND '" + fin + "' AND DNUM like 'F" + tie + "%';";
+                consulta = "SELECT DFECHA, DNUM, DREFERELLOS, DFOLIO FROM FDOC "
+                        + "WHERE DFECHA BETWEEN '" + inicio + "' AND '" + fin + "' AND DNUM like 'I%' AND DALMACEN = '01';";
 
                 cdr = sentencia.executeQuery(consulta);
 
                 while (cdr.next()) {
-                    fila = new Object[]{cdr.getString("DNUM"), cdr.getString("CLICOD"), cdr.getString("CLINOM"), cdr.getString("DFECHA"),
-                        cdr.getString("DBRUTO"), cdr.getString("DIVA"), cdr.getString("DCANTF"),
-                        cdr.getString("DCFDIUUID"), cdr.getString("DREFER"), cdr.getString("DPAGO1"), cdr.getString("DPAGO2"),
-                        cdr.getString("DPAGO3"), cdr.getString("DPAGO4"), cdr.getString("DPAGO5")};
+                    fila = new Object[]{
+                        cdr.getString("DFECHA"), 
+                        cdr.getString("DNUM"), 
+                        cdr.getString("DREFERELLOS"), 
+                        cdr.getString("DFOLIO")
+                    };
+                    
                     modelo.addRow((Object[]) fila);
 
                 }
